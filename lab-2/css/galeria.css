@@ -1,0 +1,92 @@
+:root {
+  --bg-color: #e8edf2;
+  --text-color: #222;
+  --muted-color: #555;
+  --card-bg: #756c6c;
+  --accent-color: #5a8dee;
+  --radius: 10px;
+  --gap: 20px;
+  --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: var(--text-color);
+  background: var(--bg-color);
+}
+
+header {
+  text-align: center;
+  padding: 24px 16px 12px;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 10px;
+  color: var(--accent-color);
+}
+
+p.lead {
+  font-size: 1rem;
+  color: var(--muted-color);
+  max-width: 60ch;
+  margin: 0 auto;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap);
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+@media (min-width: 1200px) {
+  .gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+figure.card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, rotate 0.25s ease;
+  margin: 0;
+  border: 1px solid #e5e7eb;
+}
+
+figure.card:hover {
+  transform: scale(1.03) rotate(-1deg);
+  box-shadow: var(--shadow-hover);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 3 / 2;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover img {
+  opacity: 0.9;
+}
+
+figcaption {
+  padding: 14px 16px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: var(--text-color);
+  text-align: center;
+}
