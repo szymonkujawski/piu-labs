@@ -17,3 +17,86 @@ a {
 a:hover {
   text-decoration: underline; /* podkreślenie przy najechaniu */
 }
+
+body {
+  padding: 0;
+  margin: 1rem;
+  background-attachment: fixed;
+  background: linear-gradient(120deg, #dbf9f4, #d1e3dd);
+}
+
+h1 {
+  color: black;
+  font-size: 3rem;
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+
+  &:hover {
+    color: #274828;
+  }
+}
+
+nav {
+  color: #5f7367;
+  font-size: 1.7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  text-align: center;
+  width: 50%;
+
+  a {
+    display: block;
+    color: #d9d7dd;
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: bold;
+
+    &:hover {
+      text-decoration: underline;
+      color: white;
+      transform: scale(1.05);
+    }
+  }
+
+  ul {
+    border: 5px solid white;
+    display: table;
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    margin: 0;
+    border-collapse: collapse;
+  }
+
+  li {
+    background-color: #5f7367;
+    border: 3px solid white;
+    display: table-row;
+    border-radius: 120px;
+
+    &:hover {
+      background-color: #9aaca1;
+    }
+
+    &:nth-child(odd) {
+      background-color: #404f46;
+      font-weight: bold;
+
+      &:hover {
+        background-color: #53655a;
+      }
+    }
+
+    a {
+      display: table-cell;
+      color: #d5e1ff;
+      text-decoration: none;
+      font-size: 1.3rem;
+      padding: 1rem 1.1rem;
+    }
+  }
+}
