@@ -263,3 +263,31 @@ legend {
   clip-path: inset(50%);
   inline-size: 0;
 }
+
+.pricebutton {
+  transition: transform 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+    box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.pricebutton:active {
+  transform: scale(1.2) translateY(-6px) rotate(-10deg);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+  background-color: #111;
+}
+
+.switches label::after {
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.size {
+  transition: transform 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+    background-size 0.3s ease, color 0.3s ease, box-shadow 0.2s ease;
+}
+
+.product:has(#s-s:checked) .size[for='s-s'],
+.product:has(#s-m:checked) .size[for='s-m'],
+.product:has(#s-l:checked) .size[for='s-l'],
+.product:has(#s-xl:checked) .size[for='s-xl'] {
+  transform: scale(1.3) rotate(-8deg);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
