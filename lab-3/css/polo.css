@@ -1,0 +1,265 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  height: 100%;
+}
+
+body {
+  background: #e1e7ec;
+  display: grid;
+  place-items: center;
+  margin: 0;
+}
+
+.one {
+  clip-path: inset(50%);
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  position: absolute;
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+}
+
+:root {
+  --c-blue: #2868b7;
+  --c-red: #c4342a;
+  --c-green: #38a03d;
+  --c-yellow: #cf9e21;
+  --ink: #212937;
+  --gap: 32px;
+  --radius: 12px;
+  --panel-w: 300px;
+  --photo-max: 500px;
+  --ring: 3px;
+  --sw: 32px;
+  --sel-scale: 0.78;
+}
+
+.product {
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: var(--gap);
+  display: flex;
+  width: min(
+    calc(var(--photo-max)+var(--gap)+var(--panel-w)),
+    calc(100vw - 48px)
+  );
+  justify-content: center;
+  --brand: var(--c-blue);
+  --img: url('../images/polo_b.png');
+}
+
+.product:has(#color-blue:checked) {
+  --img: url('../images/polo_b.png');
+  --brand: var(--c-blue);
+}
+.product:has(#color-red:checked) {
+  --img: url('../images/polo_r.png');
+  --brand: var(--c-red);
+}
+.product:has(#color-green:checked) {
+  --brand: var(--c-green);
+  --img: url('../images/polo_g.png');
+}
+.product:has(#color-yellow:checked) {
+  --img: url('../images/polo_y.png');
+  --brand: var(--c-yellow);
+}
+
+.gallery {
+  border-radius: var(--radius);
+  border: var(--ring) solid var(--brand);
+  background: white;
+  width: fit-content;
+  display: grid;
+  flex: 0 0 auto;
+  height: fit-content;
+  place-items: center;
+  margin: auto;
+}
+
+.gallery .photo {
+  aspect-ratio: 1/1;
+  background: no-repeat center/contain var(--img);
+  width: min(var(--photo-max), calc(100vw - 48px));
+}
+
+.panel {
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 0 0 var(--panel-w);
+  display: flex;
+  width: var(--panel-w);
+  gap: 8px;
+  max-width: 100%;
+  justify-self: center;
+}
+
+.header {
+  grid-template-columns: 1fr auto;
+  display: grid;
+  align-items: center;
+}
+.header h1 {
+  font-size: 26px;
+  margin: 0;
+  font-weight: 700;
+}
+.header .banner {
+  font-weight: 700;
+  border-radius: 6px;
+  color: white;
+  background: var(--brand);
+  width: fit-content;
+  padding: 4px 14px;
+}
+.header .bannertext {
+  margin: 0;
+  color: #5a6877;
+  font-weight: 400;
+  grid-column: 1/-1;
+}
+
+fieldset,
+legend {
+  align-self: center;
+  border: 0;
+  padding: 0;
+  width: fit-content;
+  margin: 0;
+}
+legend {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.colors,
+.sizes {
+  display: inline-grid;
+  justify-self: center;
+  justify-items: center;
+}
+
+.switches {
+  gap: 12px;
+  align-items: center;
+  display: flex;
+}
+
+.switches label {
+  cursor: pointer;
+  height: var(--sw);
+  outline: 2px solid black;
+  width: var(--sw);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  --color: black;
+  --active: 0;
+}
+.switches label::after {
+  border-radius: 50%;
+  transform: scale(calc(1 - (1 - var(--sel-scale)) * var(--active)));
+  background: var(--color);
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
+  content: '';
+}
+.colors .switches label[for='color-blue'] {
+  --color: var(--c-blue);
+}
+.colors .switches label[for='color-red'] {
+  --color: var(--c-red);
+}
+.colors .switches label[for='color-green'] {
+  --color: var(--c-green);
+}
+.colors .switches label[for='color-yellow'] {
+  --color: var(--c-yellow);
+}
+
+.product:has(#color-blue:checked) .colors label[for='color-blue'],
+.product:has(#color-red:checked) .colors label[for='color-red'],
+.product:has(#color-green:checked) .colors label[for='color-green'],
+.product:has(#color-yellow:checked) .colors label[for='color-yellow'] {
+  --active: 1;
+}
+
+.size-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.size {
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 15px;
+  display: grid;
+  border: 2px solid black;
+  width: 48px;
+  place-items: center;
+  background-image: linear-gradient(var(--brand), var(--brand));
+  height: 48px;
+  color: color-mix(
+    in srgb,
+    var(--ink) calc((1 - var(--sel, 0)) * 100%),
+    #fff calc(var(--sel, 0) * 100%)
+  );
+  background-repeat: no-repeat;
+  background-size: calc(var(--sel, 0) * 100%) 100%;
+}
+
+.product:has(#s-s:checked) .size[for='s-s'],
+.product:has(#s-m:checked) .size[for='s-m'],
+.product:has(#s-l:checked) .size[for='s-l'],
+.product:has(#s-xl:checked) .size[for='s-xl'] {
+  --sel: 1;
+}
+
+.price {
+  font-weight: 700;
+  font-size: 26px;
+  text-align: center;
+}
+
+.pricebutton {
+  background: var(--brand);
+  font-size: 18px;
+  cursor: pointer;
+  align-self: center;
+  border-radius: 10px;
+  width: 180px;
+  font-weight: 700;
+  color: white;
+  padding: 24px 18px;
+  border: 2px solid black;
+  appearance: none;
+}
+
+#order {
+  block-size: 0;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  inline-size: 0;
+}
