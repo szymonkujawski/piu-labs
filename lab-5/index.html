@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lab 5</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="..">POWRÓT</a></li>
+      </ul>
+    </nav>
+
+    <h2>KSZTAŁTY</h2>
+
+    <div class="controls">
+      <button id="addSquare">DODAJ KWADRAT</button>
+      <button id="addCircle">DODAJ KÓŁKO</button>
+      <button id="recolorSquares">PRZEKOLORUJ KWADRATY</button>
+      <button id="recolorCircles">PRZEKOLORUJ KOŁA</button>
+    </div>
+
+    <div class="counters">
+      <span>LICZBA KWADRATÓW: <strong id="cntSquares">0</strong></span>
+      &nbsp;|&nbsp;
+      <span>LICZBA KÓŁ: <strong id="cntCircles">0</strong></span>
+    </div>
+
+    <div
+      id="board"
+      class="board"
+      aria-label="Pole z kształtami"
+      tabindex="0"
+      role="list"
+    ></div>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

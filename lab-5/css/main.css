@@ -1,0 +1,126 @@
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  font-family: "Inter", Arial, sans-serif;
+  padding: 3rem;
+  color: #eef2ff;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background: radial-gradient(circle at 10% 10%, #0f172a 0%, #0b1220 35%, #192033 100%);
+  text-align: center;
+}
+
+h2 {
+  font-family: "Courier New", monospace;
+  margin-top: 1.6rem;
+  margin-bottom: 1.6rem;
+  -webkit-text-stroke: 0.01rem rgba(0,0,0,0.15);
+  color: #f8fafc;
+  font-size: 3.6rem;
+  text-shadow: 0 8px 24px rgba(0,0,0,0.6);
+}
+
+.controls {
+  gap: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+nav ul li a,
+button {
+  cursor: pointer;
+  border: none;
+  display: inline-block;
+  padding: 12px 22px;
+  font-family: "Inter", Arial, sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 14px;
+  transition: transform 160ms ease, box-shadow 200ms ease, background-color 200ms ease;
+  background-color: #10b981;
+  color: #04201a;
+}
+
+nav ul li a:hover,
+nav ul li a:focus,
+button:hover,
+button:focus {
+  outline: none;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(16,185,129,0.15);
+  background-color: #059669;
+}
+
+.counters {
+  margin: 14px 0;
+  font-size: 1.05em;
+  color: #dbeafe;
+}
+
+.board {
+  padding: 18px;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 16px auto;
+  min-height: 180px;
+  max-width: 780px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.04);
+  border-radius: 12px;
+  user-select: none;
+  box-shadow: 0 8px 30px rgba(2,6,23,0.6) inset;
+}
+
+.shape {
+  display: inline-block;
+  height: 72px;
+  width: 72px;
+  transition: transform 180ms ease, box-shadow 240ms ease;
+  cursor: pointer;
+  border: 2px solid rgba(0,0,0,0.6);
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+
+.shape:hover {
+  transform: translateY(-6px) scale(1.08);
+  box-shadow: 0 18px 40px rgba(2,6,23,0.6);
+}
+
+.square {
+  border-radius: 10px;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.note {
+  color: rgba(255,255,255,0.75);
+  line-height: 1.5;
+  margin-top: 10px;
+  font-style: italic;
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+nav ul {
+  padding: 0;
+  margin: 0 0 18px 0;
+  list-style: none;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
