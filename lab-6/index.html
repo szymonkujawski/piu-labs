@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ajax Posts Viewer</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="panel-wrapper">
+        <header class="panel-header">
+          <h1 class="panel-title">Podgląd postów (AJAX)</h1>
+          <p class="panel-subtitle">
+            Pobierz przykładowe dane, testuj błędy i wyczyść listę
+          </p>
+        </header>
+
+        <div class="controls action-bar">
+          <button id="fetchBtn">Pobierz dane</button>
+          <button id="errorBtn">Błąd (test)</button>
+          <button id="resetBtn">Wyczyść listę</button>
+        </div>
+
+        <div id="loader" class="loader hidden"></div>
+        <div id="error" class="error hidden"></div>
+
+        <div id="list" class="list"></div>
+      </section>
+    </main>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
