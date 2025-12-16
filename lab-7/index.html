@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 7</title>
+
+    <script type="module" src="./components/product-card.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Lab 7</h1>
+      <p class="subtitle">Moj sklep</p>
+    </header>
+
+    <section class="product-grid">
+      <product-card>
+        <img slot="image" src="images/image1.png" alt="Oversize Tee" />
+        <span slot="title">Oversize Graphic Tee</span>
+        <span slot="price">$34.90</span>
+        <span slot="colors">White, Grey</span>
+        <span slot="sizes">M, L, XL</span>
+        <span slot="promo">Hot</span>
+      </product-card>
+
+      <product-card>
+        <img slot="image" src="images/image1.png" alt="Running Shoes" />
+        <span slot="title">AirFlow Runners</span>
+        <span slot="price">$99.99</span>
+        <span slot="colors">Black / Neon</span>
+        <span slot="sizes">41-45</span>
+        <span slot="promo">Sale</span>
+      </product-card>
+
+      <product-card>
+        <img slot="image" src="images/image1.png" alt="Flannel Shirt" />
+        <span slot="title">Checked Flannel Shirt</span>
+        <span slot="price">$52.00</span>
+        <span slot="colors">Red</span>
+        <span slot="sizes">M, L</span>
+      </product-card>
+
+      <product-card>
+        <img slot="image" src="images/image1.png" alt="Puffer Jacket" />
+        <span slot="title">Winter Puffer Jacket</span>
+        <span slot="price">$139.50</span>
+        <span slot="colors">Olive</span>
+        <span slot="sizes">S, M, L</span>
+        <span slot="promo">Top Pick</span>
+      </product-card>
+
+      <product-card>
+        <img slot="image" src="images/image1.png" alt="Cap" />
+        <span slot="title">Minimal Logo Cap</span>
+        <span slot="price">$19.90</span>
+        <span slot="colors">Black</span>
+        <span slot="sizes">One Size</span>
+      </product-card>
+
+      <product-card>
+        <img slot="image" src="images/image1.png" alt="Zip Hoodie" />
+        <span slot="title">Zip-Up Hoodie</span>
+        <span slot="price">$62.00</span>
+        <span slot="colors">Dark Grey</span>
+        <span slot="sizes">S, M</span>
+        <span slot="promo">Limited</span>
+      </product-card>
+    </section>
+  </body>
+</html>
